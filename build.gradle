@@ -64,6 +64,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 
+	implementation 'net.sf.jasperreports:jasperreports:7.0.3'
+	implementation 'net.sf.jasperreports:jasperreports-fonts:7.0.3'
+	implementation 'net.sf.jasperreports:jasperreports-pdf:7.0.3'
+
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

@@ -25,6 +25,8 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static com.myevent.common.exception.ErrorDictionary.EXPIRED_TOKEN;
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
+import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
@@ -34,7 +36,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handleUncaught(Exception ex, WebRequest request) {
-        HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+        HttpStatus httpStatus = INTERNAL_SERVER_ERROR;
 
         log.error(ex.getMessage(), ex);
 
@@ -116,7 +118,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(FeignException.class)
     public ResponseEntity<?> handleBusinessException(FeignException ex, WebRequest request) {
-        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+        HttpStatus httpStatus = BAD_REQUEST;
 
         ProblemDetail problemDetail = this.createProblemDetail(
                 ex,

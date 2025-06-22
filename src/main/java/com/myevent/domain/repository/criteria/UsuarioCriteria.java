@@ -3,7 +3,6 @@ package com.myevent.domain.repository.criteria;
 import com.myevent.api.dto.usuario.UsuarioFilter;
 import com.myevent.api.dto.usuario.UsuarioResume;
 import com.myevent.domain.entity.Usuario;
-import io.jsonwebtoken.lang.Strings;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
